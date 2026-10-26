@@ -1,10 +1,12 @@
+
 .err-msg{
     color: red;
 }
 
-.card-containter{
+.card-container{
+    width: 100%;
+    max-width: 600px;
     border-radius: 30px;
-    width: 600px;
     box-shadow:5px 5px 5px 5px rgb(141, 141, 175);
 }
 
