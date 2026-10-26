@@ -1,0 +1,34 @@
+.err-msg{
+    color: red;
+}
+
+.card-containter{
+    border-radius: 30px;
+    width: 600px;
+    box-shadow:5px 5px 5px 5px rgb(141, 141, 175);
+}
+
+.form-title{
+    color: rgb(77, 105, 148);
+    font-weight: bold;
+    text-shadow: 7px 4px 4px  rgb(141, 155, 175);
+}
+
+
+input[type='text'],[type='email'],[type='number'],[type='password']{
+    box-shadow:2px 3px 2px 2px rgb(141, 155, 175);
+}
+
+button{
+    box-shadow: 5px 5px 5px rgb(65, 95, 177);
+}
+
+
+[type='radio']{
+    border:2px solid red;
+}
+
+
+label,.query{
+    color: rgb(15, 15, 92);   
+}

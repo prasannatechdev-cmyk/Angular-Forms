@@ -1,0 +1,184 @@
+<div class="justify-content-center align-items-center d-flex m-5">
+  <div class="card p-5 card-containter">
+    <div class="text-center fs-2 mb-3">
+      <p class="form-title">Student Registration Form</p>
+    </div>
+
+    <form action="" ngForm #ngfrm="ngForm" (ngSubmit)="submitform(ngfrm)" autocomplete="off">
+      <div class="mb-3">
+        <div>
+          <label for="name" class="me-3">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="name"
+            class="form-control"
+            ngModel
+            #username="ngModel"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        @if ((ngfrm.submitted || username.touched) && username.errors?.['required']) {
+          <div class="err-msg">*name is required</div>
+        } @else if (username.value && !usernamepattern.test(username.value)) {
+          <div class="err-msg">*invalid email</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="email" class="me-3">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            ngModel
+            #email="ngModel"
+            required
+          />
+        </div>
+        @if ((ngfrm.submitted || email.touched) && email.errors?.['required']) {
+          <div class="err-msg">*email is required</div>
+        } @else if (email.value && !emailpattern.test(email.value)) {
+          <p class="err-msg">incorrect password</p>
+        }
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="phone" class="me-3">Phone</label>
+          <input
+            type="number"
+            class="form-control"
+            id="phone"
+            name="phnumber"
+            ngModel
+            #phnumber="ngModel"
+            required
+          />
+        </div>
+        @if ((ngfrm.submitted || phnumber.touched) && phnumber.errors?.['required']) {
+          <div class="err-msg">*number is required</div>
+        } @else if (phnumber.value && !phonenumberpattern.test(phnumber.value)) {
+          <div class="err-msg">*invalid number</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="address" class="me-3">Address</label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            class="form-control"
+            ngModel
+            #address="ngModel"
+            required
+          />
+        </div>
+        @if ((ngfrm.submitted || address.touched) && address.errors?.['required']) {
+          <div class="err-msg">*address is required</div>
+        } @else if (address.value && !addresspattern.test(address.value)) {
+          <div class="err-msg">*invalid address</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="gender" class="me-3">Gender:</label>
+          <div class="d-flex me-2">
+            <input
+              type="radio"
+              class="me-1"
+              name="gender"
+              id="gender"
+              value="Male"
+              ngModel
+              #gender="ngModel"
+            />
+            <label for="gender">Male</label>
+          </div>
+          <div class="d-flex">
+            <input
+              type="radio"
+              class="me-1"
+              name="gender"
+              id="gender"
+              value="Female"
+              ngModel
+              #gender="ngModel"
+            />
+            <label for="gender">Female</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="idcard" class="me-2">Upload Aadhar:</label>
+          <input type="file" id="idcard" name="identity" ngModel #idcard="ngModel" required />
+        </div>
+        @if (ngfrm.submitted && idcard.errors?.['required']) {
+          <div class="err-msg">*Aadhar is required</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            ngModel
+            name="password"
+            #password="ngModel"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        @if ((ngfrm.submitted || password.touched) && password.errors?.['required']) {
+          <div class="err-msg">*password is required</div>
+        } @else if (password.value && !passwordpattern.test(password.value)) {
+          <div class="err-msg">
+            * Password must contain at least one uppercase letter [A-Z], <br>
+            * Password must contain at least one lowercase letter [a-z], <br>
+            * Password must contain at least one digit [0-9], <br>
+            * Password must contain at least one special character [@#$&*].
+          </div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <div>
+          <label for="cpassword">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="cpassword"
+            ngModel
+            #cpassword="ngModel"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        @if ((ngfrm.submitted || cpassword.touched) && cpassword.errors?.['required']) {
+          <div class="err-msg">*confirm password is required</div>
+        } @else if (cpassword.value && cpassword.value !== password.value) {
+          <div class="err-msg">*password must match</div>
+        }
+      </div>
+
+      <div class="justify-content-center d-flex">
+        <button class="btn btn-primary w-100">Signup</button>
+      </div>
+
+      <div class="d-flex justify-content-center m-3">
+        <p class="me-2 query">Already have an account?</p>
+        <a routerLink="">Login</a>
+      </div>
+    </form>
+  </div>
+</div>

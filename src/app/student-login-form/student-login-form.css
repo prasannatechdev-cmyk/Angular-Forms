@@ -1,0 +1,39 @@
+.login-card {
+  width: 400px;
+  border-radius: 35px;
+  padding: 5px;
+  box-shadow: 5px 5px 5px 5px rgb(141, 141, 175);
+}
+
+.login-header p {
+  font-size: 30px;
+}
+
+.login-button {
+  justify-content: center;
+  display: flex;
+  margin: 20px;
+}
+
+.err-msg {
+  color: red;
+}
+
+.form-title {
+  color: rgb(77, 105, 148);
+  font-weight: bold;
+  text-shadow: 8px 4px 4px rgb(141, 155, 175);
+}
+
+input {
+  box-shadow: 2px 3px 2px 2px rgb(141, 155, 175);
+}
+
+button {
+  box-shadow: 5px 5px 5px rgb(65, 95, 177);
+}
+
+label,
+.query {
+  color: rgb(1, 1, 48);
+}

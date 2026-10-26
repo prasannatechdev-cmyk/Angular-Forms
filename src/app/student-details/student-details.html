@@ -1,0 +1,177 @@
+<div class="details-page">
+  <!-- Top Navbar: Logout button on the right -->
+  <nav class="navbar-glass">
+    <div class="nav-user">
+      <button
+        type="button"
+        class="btn btn-danger logout-button"
+        (click)="logout()">
+        Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- Welcome Banner -->
+  <section class="welcome-card">
+
+    <div class="profile-avatar">
+      {{
+        loginservice.signupdetails.username
+          ? loginservice.signupdetails.username.charAt(0).toUpperCase()
+          : 'U'
+      }}
+    </div>
+
+    <div class="welcome-content">
+      <p class="welcome-label">Welcome,</p>
+
+      <h1>{{ loginservice.signupdetails.username }} 🎉</h1>
+
+      <p class="welcome-description">
+        Here are your entered details
+      </p>
+
+      <span class="registered-badge">
+        <span class="status-dot"></span>
+        Registered User
+      </span>
+    </div>
+
+    <div class="welcome-decoration">
+      <p>"Small steps<br>create big changes."</p>
+      <span>〰</span>
+    </div>
+
+  </section>
+
+  <!-- Details Grid -->
+  <main class="details-grid">
+
+    <!-- Login Details Card -->
+    <section class="glass-card">
+
+      <div class="card-banner login-banner">
+        <div class="banner-icon">🔐</div>
+
+        <div>
+          <h2>Login Details</h2>
+          <p>Your login credentials</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <div class="detail-row">
+          <div class="detail-icon blue-icon">✉</div>
+
+          <div class="detail-info">
+            <span>Email</span>
+            <strong>{{ loginservice.logindetails.email }}</strong>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon purple-icon">🔑</div>
+
+          <div class="detail-info">
+            <span>Password</span>
+            <strong>••••••••</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Signup Details Card -->
+    <section class="glass-card">
+
+      <div class="card-banner signup-banner">
+        <div class="banner-icon">👤</div>
+
+        <div>
+          <h2>Signup Details</h2>
+          <p>Your registration information</p>
+        </div>
+      </div>
+
+      <div class="card-body signup-body">
+
+        <div class="detail-row">
+          <div class="detail-icon blue-icon">👤</div>
+
+          <div class="detail-info">
+            <span>Username</span>
+            <strong>{{ loginservice.signupdetails.username }}</strong>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon purple-icon">✉</div>
+
+          <div class="detail-info">
+            <span>Email</span>
+            <strong>{{ loginservice.signupdetails.email }}</strong>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon green-icon">☎</div>
+
+          <div class="detail-info">
+            <span>Phone Number</span>
+            <strong>{{ loginservice.signupdetails.phnumber }}</strong>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon orange-icon">📍</div>
+
+          <div class="detail-info">
+            <span>Address</span>
+            <strong>{{ loginservice.signupdetails.address }}</strong>
+          </div>
+        </div>
+
+        @if (loginservice.signupdetails.gender) {
+          <div class="detail-row">
+            <div class="detail-icon pink-icon">⚧</div>
+
+            <div class="detail-info">
+              <span>Gender</span>
+              <strong>{{ loginservice.signupdetails.gender }}</strong>
+            </div>
+          </div>
+        }
+
+        <div class="detail-row">
+          <div class="detail-icon purple-icon">🔒</div>
+
+          <div class="detail-info">
+            <span>Password</span>
+            <strong>••••••••</strong>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon cyan-icon">🛡</div>
+
+          <div class="detail-info">
+            <span>Confirm Password</span>
+            <strong>••••••••</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="details-footer">
+    <span class="footer-line"></span>
+    <span class="footer-heart">♥</span>
+    <p>Thank you for being a part of our community!</p>
+    <span class="footer-line"></span>
+  </footer>
+
+</div>
