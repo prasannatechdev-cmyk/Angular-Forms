@@ -164,4 +164,4 @@ src/
 
 **Prasanna Shaganti**
 
-B.Tech in Computer Science and Engineering | Frontend Development
+B.Tech in Computer Science Engineering | Frontend Development
